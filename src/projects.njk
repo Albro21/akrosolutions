@@ -1,6 +1,5 @@
 ---
 layout: page.njk
-permalink: /projects/
 metaTitle: "Projects | AKRO Solutions"
 metaDescription: "Professional BIM Modeling, LOD100–LOD500, coordination, prefabrication detailing, and full project support across the UK and Europe."
 metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, fire suppression modeling, mechanical modeling, UK BIM, Europe BIM"
@@ -11,12 +10,11 @@ metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, f
   <div class="max-w-7xl mx-auto space-y-20">
     <!-- Title -->
     <h1 class="text-2xl md:text-4xl font-bold text-center gradient-title-projects mb-12">OUR PROJECTS</h1>
-      <!-- Grid -->
-      <div class="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
-        {% for project in collections.project %}
-          {% include "components/project-card.njk" %}
-        {% endfor %}
-      </div>
+    <!-- Grid -->
+    <div class="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+      {% for project in collections.project %}
+        {% include "components/project-card.njk" %}
+      {% endfor %}
     </div>
   </div>
 </section>
