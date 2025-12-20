@@ -1,30 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 
-// Load services array from services.json (for services page grid)
-export function loadServicesArray() {
-  const servicesPath = path.join(process.cwd(), 'src/_data/services.json');
-  const imagesDir = path.join(process.cwd(), 'src/assets/images/services');
-  const services = JSON.parse(fs.readFileSync(servicesPath, 'utf8'));
-
-  // For each service, dynamically load images from its folder
-  services.forEach(service => {
-    const serviceKey = service.link.replace('.html', '');
-    const serviceImagesDir = path.join(imagesDir, serviceKey);
-    let images = [];
-
-    if (fs.existsSync(serviceImagesDir)) {
-      images = fs.readdirSync(serviceImagesDir)
-        .filter(file => /\.(png|jpg|jpeg|gif|webp)$/i.test(file))
-        .sort();
-    }
-
-    service.images = images;
-  });
-
-  return services;
-}
-
 // Load services detail data from individual JSON files
 export function loadServicesData() {
   const servicesDir = path.join(process.cwd(), 'src/_data/services');

@@ -1,4 +1,4 @@
-import { loadServicesArray, loadServicesData, loadSoftwareImages, loadBimPackagesArray } from './src/utils/helpers.js';
+import { loadServicesData, loadSoftwareImages, loadBimPackagesArray } from './src/utils/helpers.js';
 
 export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
@@ -11,12 +11,10 @@ export default function(eleventyConfig) {
 
   // Load dynamic data
   const servicesDetailData = loadServicesData();
-  const servicesData = loadServicesArray();
   const softwareImages = loadSoftwareImages();
   const bimPackagesData = loadBimPackagesArray();
 
   eleventyConfig.addGlobalData("servicesDetail", servicesDetailData);
-  eleventyConfig.addGlobalData("servicesList", servicesData);
   eleventyConfig.addGlobalData("softwareImages", softwareImages);
   eleventyConfig.addGlobalData("bimPackagesData", bimPackagesData);
 

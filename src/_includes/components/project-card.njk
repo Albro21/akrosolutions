@@ -1,56 +1,42 @@
 <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500">
-
   {% if project.data.images and project.data.images.length %}
     <div class="relative slideshow-container" data-autoplay="false">
-
       <div class="relative h-60 overflow-hidden">
         {% for image in project.data.images %}
           <img src="/assets/images/projects/{{ project.fileSlug }}/{{ image }}" alt="{{ project.data.projectTitle | striptags }} – Image {{ loop.index }}" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 slideshow-image {% if loop.first %}opacity-100{% else %}opacity-0{% endif %}">
         {% endfor %}
       </div>
-
       {% if project.data.images.length > 1 %}
         <button type="button" data-slideshow-prev class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all hover:scale-110 z-10 cursor-pointer">
           <i class="fa-solid fa-chevron-left text-sm"></i>
         </button>
-
         <button type="button" data-slideshow-next class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all hover:scale-110 z-10 cursor-pointer">
           <i class="fa-solid fa-chevron-right text-sm"></i>
         </button>
-
         <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
           {% for _ in project.data.images %}
             <button type="button" class="slideshow-dot w-2 h-2 rounded-full {% if loop.first %}bg-akro-2{% else %}bg-akro-3{% endif %} transition-all cursor-pointer"></button>
           {% endfor %}
         </div>
       {% endif %}
-
     </div>
   {% endif %}
-
-  <!-- Content -->
   <div class="p-6 space-y-3 text-gray-200">
-
     {% if project.data.title %}
       <h3 class="text-2xl font-semibold text-gray-50">{{ project.data.title | safe }}</h3>
     {% endif %}
-
     {% if project.data.location %}
       <p><i class="fa-solid fa-location-dot text-akro-3"></i> {{ project.data.location }}</p>
     {% endif %}
-
     {% if project.data.power %}
       <p><i class="fa-solid fa-bolt text-akro-3"></i> {{ project.data.power }}</p>
     {% endif %}
-    
     {% if project.data.rooms %}
       <p><i class="fa-solid fa-bed text-akro-3"></i> {{ project.data.rooms }} Rooms</p>
     {% endif %}
-
     {% if project.data.area %}
       <p><i class="fa-solid fa-up-down-left-right text-akro-3"></i> {{ project.data.area }}</p>
     {% endif %}
-
     <a href="{{ project.url }}" class="mt-4 w-full py-3 rounded-full text-lg font-bold text-white text-center block btn-blue">Learn More</a>
   </div>
 </div>

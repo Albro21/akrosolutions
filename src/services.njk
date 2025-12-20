@@ -1,6 +1,5 @@
 ---
 layout: page.njk
-permalink: /services.html
 metaTitle: "Services | AKRO Solutions"
 metaDescription: "Professional BIM Modeling, LOD100–LOD500, coordination, prefabrication detailing, and full project support across the UK and Europe."
 metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, fire suppression modeling, mechanical modeling, UK BIM, Europe BIM, Services"
@@ -10,10 +9,10 @@ metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, f
 <section id="services" class="bg-gray-950 py-20 px-6">
   <div class="max-w-7xl mx-auto space-y-20">
     <!-- Title -->
-    <h1 class="text-2xl md:text-4xl font-bold text-center gradient-title mb-12">OUR SERVICES</h1>
+    <h1 class="text-2xl md:text-4xl font-bold text-center gradient-title-services mb-12">OUR SERVICES</h1>
     <!-- Grid -->
     <div class="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
-      {% for service in servicesList %}
+      {% for service in collections.service %}
         {% include "components/service-card.njk" %}
       {% endfor %}
     </div>

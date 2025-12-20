@@ -25,7 +25,7 @@
     transform: translateY(-2px);
 }
 
-.gradient-title {
+.gradient-title-services {
     background: linear-gradient(to right, var(--color-akro-2), var(--color-akro-1));
     -webkit-background-clip: text;
     background-clip: text;
