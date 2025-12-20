@@ -1,20 +1,10 @@
-import { loadSoftwareImages, loadBimPackagesArray } from './src/utils/helpers.js';
-
 export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
-  // Add global data
   eleventyConfig.addGlobalData("site", {
-    lastModified: new Date().toISOString().split('T')[0] // YYYY-MM-DD format
+    lastModified: new Date().toISOString().split('T')[0]
   });
-
-  // Load dynamic data
-  const softwareImages = loadSoftwareImages();
-  const bimPackagesData = loadBimPackagesArray();
-
-  eleventyConfig.addGlobalData("softwareImages", softwareImages);
-  eleventyConfig.addGlobalData("bimPackagesData", bimPackagesData);
 
   return {
     dir: {
