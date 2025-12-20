@@ -77,31 +77,13 @@ metaKeywords: "contact AKRO Solutions, BIM services contact, UK BIM contact, Eur
           <!-- Services -->
           <div class="bg-gray-900 rounded-2xl p-8 border border-gray-800">
             <h3 class="text-2xl font-bold text-gray-50 mb-6">Our Services</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-akro-1"></i>
-                <span class="text-gray-300">BIM Modeling</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-akro-1"></i>
-                <span class="text-gray-300">MEP Coordination</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-akro-1"></i>
-                <span class="text-gray-300">Family Creation</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-akro-1"></i>
-                <span class="text-gray-300">Point Cloud Survey</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-akro-1"></i>
-                <span class="text-gray-300">Prefabrication</span>
-              </div>
-              <div class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-akro-1"></i>
-                <span class="text-gray-300">Consultation</span>
-              </div>
+            <div class="grid grid-cols-1 gap-4">
+              {% for service in collections.service %}
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-check text-akro-1"></i>
+                  <span class="text-gray-300">{{ service.data.title }}</span>
+                </div>
+              {% endfor %}
             </div>
           </div>
         </div>
