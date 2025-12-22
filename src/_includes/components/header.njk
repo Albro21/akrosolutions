@@ -18,17 +18,9 @@
       <div class="relative group" style="position:relative;">
         <a href="/services">Services</a>
         <div class="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 hover:visible hover:opacity-100 transition-all duration-200 bg-gray-800 text-gray-300 rounded-md py-2 mt-1 shadow-lg z-20 flex flex-col min-w-[320px] w-max" style="top:100%;left:0;">
-          <a href="/services/bim-model-management" class="block px-4 py-2 hover:bg-gray-700">BIM Model Management</a>
-          <a href="/services/mep-coordination" class="block px-4 py-2 hover:bg-gray-700">MEP Coordination</a>
-          <a href="/services/isometric-spooling-drawings" class="block px-4 py-2 hover:bg-gray-700">Isometric & Spooling Drawings</a>
-          <a href="/services/bim-model-audit" class="block px-4 py-2 hover:bg-gray-700">BIM Model Audit</a>
-          <a href="/services/point-cloud-survey" class="block px-4 py-2 hover:bg-gray-700">Point Cloud Survey</a>
-          <a href="/services/building-services-coordination" class="block px-4 py-2 hover:bg-gray-700">Building Services Coordination</a>
-          <a href="/services/model-data-input-services" class="block px-4 py-2 hover:bg-gray-700">Model Data Input Services</a>
-          <a href="/services/detailed-plant-room-design" class="block px-4 py-2 hover:bg-gray-700">Detailed Plant Room Design</a>
-          <a href="/services/cat-a-cat-b-fit-out-design" class="block px-4 py-2 hover:bg-gray-700">CAT A & CAT B Fit Out Design</a>
-          <a href="/services/mep-modular-design" class="block px-4 py-2 hover:bg-gray-700">MEP Modular Design</a>
-          <a href="/services/bim-family-creation" class="block px-4 py-2 hover:bg-gray-700">BIM Family Creation</a>
+          {% for service in collections.service %}
+            <a href="/services/{{ service.fileSlug }}" class="block px-4 py-2 hover:bg-gray-700">{{ service.data.title }}</a>
+          {% endfor %}
         </div>
       </div>
       <a href="/bim-packages">BIM Packages</a>

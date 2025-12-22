@@ -1,8 +1,8 @@
 ---
 layout: page.njk
 metaTitle: "Home | AKRO Solutions"
-metaDescription: "Professional BIM Modeling, LOD100–LOD500, coordination, prefabrication detailing, and full project support across the UK and Europe."
-metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, fire suppression modeling, mechanical modeling, UK BIM, Europe BIM"
+metaDescription: "Professional BIM Modelling, LOD100–LOD500, coordination, prefabrication detailing, and full project support across the UK and Europe."
+metaKeywords: "BIM, 3D modelling, LOD, Revit, BIM coordination, prefabrication, fire suppression modelling, mechanical modelling, UK BIM, Europe BIM"
 ---
 
 <!-- Background Image -->
@@ -58,9 +58,9 @@ metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, f
 
     <!-- Text -->
     <div class="text-gray-50 space-y-6">
-      <h2 class="text-4xl font-bold">AKRO Solutions</h2>
+      <h2 class="text-3xl lg:text-4xl font-bold">AKRO Solutions</h2>
       <p class="text-gray-300 leading-relaxed">
-        <span class="text-akro-2 font-bold">AKRO Solutions</span> is a leading provider of high-precision BIM engineering and modeling services. We deliver accurate, fully coordinated models that meet the highest industry standards and support seamless project execution.
+        <span class="text-akro-2 font-bold">AKRO Solutions</span> is a leading provider of high-precision BIM engineering and modelling services. We deliver accurate, fully coordinated models that meet the highest industry standards and support seamless project execution.
       </p>
       <p class="text-gray-300 leading-relaxed">
         With a sharp focus on <span class="text-akro-3 font-semibold">quality</span>, <span class="text-akro-3 font-semibold">efficiency</span>, and <span class="text-akro-3 font-semibold">reliability</span>, we empower our clients with data-rich models that streamline planning, coordination, and decision-making. Our team operates exclusively in the digital space, ensuring every detail is perfected before it reaches the site. At AKRO Solutions, excellence isn’t optional — it’s the foundation of everything we do.
@@ -74,7 +74,7 @@ metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, f
   <div class="bg-gray-950/60 backdrop-blur-md py-22 px-6">
     <div class="max-w-7xl mx-auto mb-4 flex items-center justify-between">
       <!-- Title -->
-      <h2 class="text-4xl font-bold text-gray-50">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-50">
         Our Services
       </h2>
 
@@ -105,7 +105,7 @@ metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, f
   
   <!-- Title -->
   <div class="mb-8">
-    <h2 class="text-4xl font-bold text-gray-50 mb-4">
+    <h2 class="text-3xl lg:text-4xl font-bold text-gray-50 mb-4">
       BIM Level of Development
     </h2>
     <p class="text-xl text-gray-300">
@@ -129,7 +129,7 @@ metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, f
     <div>
       <!-- Title -->
       <div class="flex items-center justify-between mb-10">
-        <h2 class="text-4xl font-bold text-gray-50">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-50">
           Featured Projects
         </h2>
 
@@ -215,22 +215,22 @@ metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, f
 </section>
 
 <!-- Licensed Software Section -->
-<section class="bg-gray-900 relative isolate overflow-hidden py-22" id="software">
+<section class="bg-gray-900 relative isolate overflow-hidden pt-22 pb-10" id="software">
   <!-- Title -->
   <div class="text-center mb-12">
-    <h2 class="text-4xl font-bold text-gray-50">Licensed Software in Use</h2>
+    <h2 class="text-3xl lg:text-4xl font-bold text-gray-50">Licensed Software in Use</h2>
   </div>
   <!-- Carousel Wrapper -->
   <div class="overflow-hidden">
     <div class="animate-slide-software">
       <!-- Software Icons -->
       {% for image in softwareImages %}
-        <img src="/assets/images/software/{{ image }}" alt="Software {{ loop.index }}" class="h-20 w-20 mx-4 object-cover rounded-lg shadow-lg">
+        <img src="/assets/images/software/{{ image }}" alt="Software {{ loop.index }}" class="h-16 w-16 mx-4 object-cover rounded-lg shadow-lg">
       {% endfor %}
 
       <!-- Repeat for smooth infinite scroll -->
       {% for image in softwareImages %}
-        <img src="/assets/images/software/{{ image }}" alt="Software {{ loop.index }}" class="h-20 w-20 mx-4 object-cover rounded-lg shadow-lg">
+        <img src="/assets/images/software/{{ image }}" alt="Software {{ loop.index }}" class="h-16 w-16 mx-4 object-cover rounded-lg shadow-lg">
       {% endfor %}
     </div>
   </div>

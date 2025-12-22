@@ -1,8 +1,8 @@
 ---
 layout: page.njk
 metaTitle: "Services | AKRO Solutions"
-metaDescription: "Professional BIM Modeling, LOD100–LOD500, coordination, prefabrication detailing, and full project support across the UK and Europe."
-metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, fire suppression modeling, mechanical modeling, UK BIM, Europe BIM, Services"
+metaDescription: "Professional BIM Modelling, LOD100–LOD500, coordination, prefabrication detailing, and full project support across the UK and Europe."
+metaKeywords: "BIM, 3D modelling, LOD, Revit, BIM coordination, prefabrication, fire suppression modelling, mechanical modelling, UK BIM, Europe BIM, Services"
 ---
 
 <!-- Services -->
@@ -12,7 +12,8 @@ metaKeywords: "BIM, 3D modeling, LOD, Revit, BIM coordination, prefabrication, f
     <h1 class="text-2xl md:text-4xl font-bold text-center gradient-title-services mb-12">OUR SERVICES</h1>
     <!-- Grid -->
     <div class="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
-      {% for service in collections.service %}
+      {% set orderedServices = collections.service | orderByArray(serviceOrder, 'fileSlug') %}
+      {% for service in orderedServices %}
         {% include "components/service-card.njk" %}
       {% endfor %}
     </div>

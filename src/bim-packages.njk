@@ -1,7 +1,7 @@
 ---
 layout: page.njk
 metaTitle: "BIM Packages | AKRO Solutions"
-metaDescription: "Explore our comprehensive BIM Packages including ventilation, mechanical pipework, fire systems, domestic, drainage, and rainwater systems. Professional BIM modeling across the UK and Europe."
+metaDescription: "Explore our comprehensive BIM Packages including ventilation, mechanical pipework, fire systems, domestic, drainage, and rainwater systems. Professional BIM modelling across the UK and Europe."
 metaKeywords: "BIM Packages, ventilation BIM, mechanical pipework BIM, fire package BIM, domestic BIM, drainage BIM, rainwater systems BIM, UK BIM, Europe BIM"
 ---
 
@@ -12,13 +12,14 @@ metaKeywords: "BIM Packages, ventilation BIM, mechanical pipework BIM, fire pack
     <div class="text-center mb-16">
       <h1 class="text-4xl md:text-6xl font-bold text-gray-50 mb-6">BIM Packages</h1>
       <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-        Comprehensive BIM modeling packages for all your building systems needs. From ventilation to drainage, we provide detailed, coordinated models at any LOD level.
+        Comprehensive BIM modelling packages for all your building systems needs. From ventilation to drainage, we provide detailed, coordinated models at any LOD level.
       </p>
     </div>
 
     <!-- Packages Grid -->
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {% for package in collections.package %}
+      {% set orderedPackages = collections.package | orderByArray(packagesOrder, 'fileSlug') %}
+      {% for package in orderedPackages %}
         {% include "components/package-card.njk" %}
       {% endfor %}
     </div>

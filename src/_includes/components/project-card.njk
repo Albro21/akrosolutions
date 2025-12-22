@@ -1,4 +1,4 @@
-<div class="bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500">
+<div class="bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500 flex flex-col h-full">
   {% if project.data.images and project.data.images.length %}
     <div class="relative slideshow-container" data-autoplay="false">
       <div class="relative h-60 overflow-hidden">
@@ -21,7 +21,7 @@
       {% endif %}
     </div>
   {% endif %}
-  <div class="p-6 space-y-3 text-gray-200">
+  <div class="p-6 space-y-3 text-gray-200 flex flex-col flex-1">
     {% if project.data.title %}
       <h3 class="text-2xl font-semibold text-gray-50">{{ project.data.title | safe }}</h3>
     {% endif %}
@@ -37,6 +37,7 @@
     {% if project.data.area %}
       <p><i class="fa-solid fa-up-down-left-right text-akro-3"></i> {{ project.data.area }}</p>
     {% endif %}
+    <div class="flex-1"></div>
     <a href="{{ project.url }}" class="mt-4 w-full py-3 rounded-full text-lg font-bold text-white text-center block btn-blue">Learn More</a>
   </div>
 </div>
