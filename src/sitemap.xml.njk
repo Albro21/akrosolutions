@@ -32,18 +32,18 @@ eleventyExcludeFromCollections: true
     <priority>0.8</priority>
   </url>
 
-  {% for project in projectsList %}
+  {% for project in collections.project %}
   <url>
-    <loc>https://akrosolutions.com/{{ project.link }}</loc>
+    <loc>https://akrosolutions.com{{ project.url }}</loc>
     <lastmod>{{ site.lastModified }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   {% endfor %}
 
-  {% for service in servicesList %}
+  {% for service in collections.service %}
   <url>
-    <loc>https://akrosolutions.com/{{ service.link }}</loc>
+    <loc>https://akrosolutions.com{{ service.url }}</loc>
     <lastmod>{{ site.lastModified }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
