@@ -1,10 +1,39 @@
 <div class="group relative rounded-xl p-1 bg-linear-to-br from-akro-1 via-akro-2 to-akro-3 hover:scale-105 transition-transform duration-500 flex flex-col">
   <div class="bg-gray-800 rounded-xl shadow-xl group-hover:shadow-akro1/40 transition-all duration-500 ease-out flex-1 flex flex-col">
+    <!-- Image Section or Icon Placeholder -->
     <div class="w-full h-60 overflow-hidden shrink-0">
-      <!-- Placeholder for image -->
-      <div class="w-full h-full bg-linear-to-br from-akro-1 to-akro-2 flex items-center justify-center text-gray-50 text-6xl">
-        <i class="fa-solid {{ package.data.icon }}"></i>
-      </div>
+      {% if package.data.images and package.data.images | length > 0 %}
+        <!-- Slideshow -->
+        <div class="relative slideshow-container" data-autoplay="false">
+          <div class="relative h-60 overflow-hidden">
+            {% for image in package.data.images %}
+              <img src="/assets/images/bim-packages/{{ package.fileSlug }}/{{ image }}" alt="{{ package.data.title }} – Image {{ loop.index }}" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 slideshow-image {% if loop.first %}opacity-100{% else %}opacity-0{% endif %}">
+            {% endfor %}
+          </div>
+          
+          {% if package.data.images | length > 1 %}
+            <!-- Navigation Buttons -->
+            <button type="button" data-slideshow-prev class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all hover:scale-110 z-10 cursor-pointer">
+              <i class="fa-solid fa-chevron-left text-sm"></i>
+            </button>
+            <button type="button" data-slideshow-next class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all hover:scale-110 z-10 cursor-pointer">
+              <i class="fa-solid fa-chevron-right text-sm"></i>
+            </button>
+            
+            <!-- Dots Indicator -->
+            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {% for image in package.data.images %}
+                <button type="button" class="slideshow-dot w-2 h-2 rounded-full {% if loop.first %}bg-akro-2{% else %}bg-akro-3{% endif %} transition-all cursor-pointer"></button>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% else %}
+        <!-- Icon Placeholder -->
+        <div class="w-full h-full bg-linear-to-br from-akro-1 to-akro-2 flex items-center justify-center text-gray-50 text-6xl">
+          <i class="fa-solid {{ package.data.icon }}"></i>
+        </div>
+      {% endif %}
     </div>
     <div class="p-6 flex flex-col flex-1">
       <h3 class="text-xl font-bold text-gray-50 mb-3">{{ package.data.title }}</h3>
